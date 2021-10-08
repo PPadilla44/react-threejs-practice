@@ -1,78 +1,87 @@
-import React, { Suspense, useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { Canvas, useLoader } from 'react-three-fiber';
-import { OrbitControls, PerspectiveCamera, Stars, Torus } from "drei";
-import { Physics, useBox, usePlane } from 'use-cannon';
-import { Mesh, PointLight, SphereGeometry, TextureLoader, TorusGeometry } from 'three';
-import moonPic from './assets/moon.jpg';
-import normalPic from './assets/normal.jpg';
-import pabloPic from './assets/me-boxed.jpg'
+
+import Space from './components/Space';
 
 function App() {
-  
-  var pablo = {};
-
-  const Pablo = () => {
-    const pabloTexture = useLoader(TextureLoader, pabloPic)
-    pablo = (
-    <mesh position={[2,0,-5]}>
-      <boxGeometry args={[3,3,3]} />
-      <meshStandardMaterial
-    map={pabloTexture}
-    />
-  </mesh>)
-  console.log(pablo);
-
-    return (
-      pablo
-    )
-  }
-
-  const Moon = () => {
-    const moon = useLoader(TextureLoader, moonPic)
-    const normal = useLoader(TextureLoader, normalPic)
-    return (
-      <mesh  position={[-10, 0 , 30]}>
-        <sphereGeometry args={[3,32,32]} />
-        <meshStandardMaterial
-        map={moon}
-        normalMap={normal} 
-        />
-      </mesh>
-    )
-  }
-
-  useEffect(() => {
-    console.log(pablo);
-
-  },[pablo])
-
 
   return (
+    <>
+      <Space/>
 
-  <Canvas >
-    <OrbitControls />
-    <PerspectiveCamera 
-    fov={75} 
-    near={0.1} 
-    far={1000} 
-    aspect={window.innerWidth / window.innerHeight}
-    position={ [-3, 0, 30 ] }
-    >
-    <Torus args={[10, 3, 16, 100]}>
-      <meshStandardMaterial attach="material" color="#ff6347" />
-    </Torus>
-    <pointLight color="#ffffff" position={[5,5,5]} />
-    <ambientLight color="#ffffff" />
+      <main>
 
-    <Stars />
-    <Suspense fallback={null}>
-      <Moon />
-      <Pablo />
-    </Suspense>
-    </PerspectiveCamera>
-  </Canvas>
+        <header>
+          <h1>Jeff Delaney</h1>
+          <p>🚀 Welcome to my website!</p>
+        </header>
 
+
+        <blockquote>
+          <p>I like making stuff and putting it on the internet</p>
+        </blockquote>
+
+        <section>
+          <h2>📜 Manifesto</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+        </section>
+
+        <section className="light">
+          <h2>👩🏽‍🚀 Projects</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+          <h2>🏆 Accomplishments</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+        </section>
+
+        <blockquote>
+          <p>The best way out is always through <br />-Robert Frost</p>
+        </blockquote>
+
+        <section className="left">
+          <h2>🌮 Work History</h2>
+
+          <h3>McDonalds</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <h3>Burger King</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <h3>Taco Bell</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+
+        </section>
+
+        <blockquote>
+          <p>Thanks for watching!</p>
+        </blockquote>
+
+
+      </main>
+
+    </>
   );
 }
 export default App;
