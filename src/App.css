@@ -4,6 +4,7 @@
 
 html,
 body,
+.App,
 #root {
   width: 100vw;
   height: 100vh;
@@ -20,6 +21,7 @@ body,
 }
 
 body {
+  /* overflow: hidden; */
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
     segoe ui, arial, sans-serif;
 }

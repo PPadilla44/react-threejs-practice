@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.css';
-
+import { Canvas, useFrame } from "react-three-fiber";
 import Space from './components/Space';
 
 function App() {
 
+
   return (
-    <>
-      <Space/>
+    <div className="App">
+      <Space className="canvas"/>
+
 
       <main>
 
         <header>
-          <h1>Jeff Delaney</h1>
+          <h1>Pablo Padilla</h1>
           <p>🚀 Welcome to my website!</p>
         </header>
 
@@ -81,7 +83,7 @@ function App() {
 
       </main>
 
-    </>
+    </div>
   );
 }
 export default App;
