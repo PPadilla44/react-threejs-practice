@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Canvas, useFrame } from "react-three-fiber";
 import Space from './components/Space';
 
 function App() {
 
 
+
   return (
     <div className="App">
-      <Space className="canvas"/>
+      <Space  className="canvas"/>
 
 
       <main>
